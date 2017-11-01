@@ -3,23 +3,27 @@
 
 <section class="google-form">
   <div class="wrapper">
-    <!-- START CODING YOUR FORM -->
-    <!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSdhD23SGZpSDAWctvP3z-2MtW7SDUBAwJXNoVo7IlmVNytBSg/viewform?embedded=true"> -->
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdhD23SGZpSDAWctvP3z-2MtW7SDUBAwJXNoVo7IlmVNytBSg/formResponse">
+    <div id="completed">
+      Thank you for your response.
+    </div>
+    <form>
+    <!-- <form action="https://docs.google.com/forms/d/e/1FAIpQLSdhD23SGZpSDAWctvP3z-2MtW7SDUBAwJXNoVo7IlmVNytBSg/formResponse" target="hiddenFrame"> -->
+      <!-- Hidden frame to prevent redirecting. -->
+      <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+
 
       <!-- SINGLE LINE TEXT FIELD -->
       <label for="comfort">Where did you last cry?</label>
+      <input type="button" id="drag" value="Place on map"> <span id="describe">or describe it below.</span>
       <p class="caption">If off campus, please describe the closest street intersection, and if on campus, describe the building/location within the building.</p>
-      <!-- <input name="entry.1169089770" type="text" id="comfort"/> -->
-      <input type="text" jsname="YPqjbf" autocomplete="off" tabindex="0" name="entry.2117530617" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="">
+      <input id="location" type="text" jsname="YPqjbf" autocomplete="off" tabindex="0" name="entry.2117530617" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="">
 
       <!-- MULTI-LINE TEXT FIELD -->
       <label for="explain">Why were you crying?</label>
-      <!-- <textarea name="entry.1175247585" id="explain"/></textarea> -->
       <textarea jsname="YPqjbf" jscontroller="gZjhIf" jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" required="" name="entry.643682983" dir="auto" data-initial-dir="auto"></textarea>
 
       <!-- SUBMIT BUTTON -->
-      <input class="button" type="submit" value="Submit">
+      <input class="button" id="submit" type="submit" value="Submit">
     </form>
   </div>
 </section>

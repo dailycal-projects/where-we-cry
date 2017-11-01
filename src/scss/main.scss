@@ -43,6 +43,12 @@
     max-width: 600px;
   }
 
+  #completed {
+    display: none;
+    text-align: center;
+    margin: 60px;
+  }
+
   form p {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
@@ -61,20 +67,23 @@
   .input-wrap {
     margin-bottom: 10px;
   }
+
   select {
     display: block;
     margin-bottom: 50px;
   }
+
   input[type="checkbox"], input[type="radio"] {
     margin-right: 5px;
   }
+
   label {
     display: block;
     font-family: 'Lato', serif;
     font-size: 18px;
     line-height: 1.6;
     font-weight: 400;
-    margin-bottom: 0;
+    margin: 20px 0px;
   }
 
   .caption {
@@ -88,6 +97,10 @@
     margin-bottom: 0;
   }
 
+  form .caption {
+    margin: 15px 0 5px 0;
+  }
+
   input[type="text"],
   textarea {
     width: 80%;
@@ -96,9 +109,14 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: #fafafa;
     margin-bottom: 50px;
-    margin-top: 10px;
     width: 100%;
   }
+
+  input[type="button"] {
+    padding: 5px;
+    font-size: 16px;
+  }
+
   .input-wrap.select-box {
     border: 1px solid #00BF8F;
     background: #DAEAE6;
