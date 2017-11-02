@@ -16,7 +16,8 @@ window.$('.icon-twitter').click((e) => {
   window.open(`https://twitter.com/home?status=${status}`);
 });
 
-var map = L.map('map').setView([37.871470, -122.260363], 15); //'map' refers to map.html
+var map = L.map('map', { scrollWheelZoom:false })
+            .setView([37.871470, -122.260363], 15); //'map' refers to map.html
 
 // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -43,21 +44,47 @@ let pinpoint = null; // Null if no point dragged; else, contains icon.
 $("#drag").click(function() {
   if (pinpoint == null) {
     markers.forEach(m => {
-      m.setOpacity(0.3);
+      m.setOpacity(0.5);
     });
-    pinpoint = L.marker(map.getBounds().getCenter(), {draggable: true});
+
+    // From https://github.com/pointhi/leaflet-color-markers
+    let coloredIcon = new L.Icon({
+      iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
+
+    pinpoint = L.marker(map.getBounds().getCenter(), {draggable: true, icon: coloredIcon, zIndexOffset: 100});
     pinpoint.addTo(map);
-    $("input#location").prop('disabled', true);
-    $("input#location").css("opacity", 0.2);
-    $("form p.caption").css("opacity", 0.5);
-    $("#describe").css("opacity", 0.2);
+
+    if ($("textarea").val() != "") {
+      $(".button").removeAttr("disabled");
+    }
   }
 });
 
-$("#submit").click(function() {
-  if (pinpoint != null) {
-    $("input#location").val(pinpoint.getLatLng());
+// after unfocus of text field, check if it has information.
+$("textarea").focusout(function() {
+  if ($("textarea").val() != "" && pinpoint != null) {
+    $(".button").removeAttr("disabled");
+  } else {
+    $(".button").attr("disabled", "true");
   }
-  $("form").hide();
-  $("#completed").fadeIn();
+})
+
+$("#submit").click(function() {
+  // Check if pinpoint exists and description is filled
+  if (pinpoint == null || $("textarea").val() == "") {
+    console.log("error"); // show error
+    return;
+  } else {
+
+    $("input#location").val(pinpoint.getLatLng());
+
+    $("form").hide();
+    $("#completed").fadeIn();
+  }
 })

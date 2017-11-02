@@ -26,6 +26,16 @@
     background: #ffffff;
     font-family: 'Lato', sans-serif;
     letter-spacing: 0.5px;
+    display: inline-block;
+    margin-left: 20px;
+    max-width: calc(30% - 20px);
+    vertical-align: top;
+    margin-bottom: 40px;
+    height: 500px;
+
+  h2 {
+    line-height: 1.2em;
+  }
 
   *:focus {
     outline-color: #c1c1c9;
@@ -39,7 +49,6 @@
   .wrapper {
     // width: 85%;
     // margin: 0 auto;
-    margin: 1.618em auto;
     max-width: 600px;
   }
 
@@ -83,7 +92,7 @@
     font-size: 18px;
     line-height: 1.6;
     font-weight: 400;
-    margin: 20px 0px;
+    margin-top: 20px;
   }
 
   .caption {
@@ -97,10 +106,6 @@
     margin-bottom: 0;
   }
 
-  form .caption {
-    margin: 15px 0 5px 0;
-  }
-
   input[type="text"],
   textarea {
     width: 80%;
@@ -108,8 +113,10 @@
     font-size: 16px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: #fafafa;
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     width: 100%;
+    resize: none;
   }
 
   input[type="button"] {
@@ -137,6 +144,7 @@
     margin-bottom: 50px;
     width: 50%;
   }
+
   .input-wrap.select-box:hover {
     background: #00BF8F;
   }
@@ -148,6 +156,7 @@
   textarea {
     min-height: 100px;
   }
+
   select {
     border: none;
     background: transparent;
@@ -159,11 +168,12 @@
   select:hover {
     cursor: pointer;
   }
-  input[type="submit"] {
+
+  input[type="submit"], input[type="button"] {
     display: block;
-    margin: 20px auto 50px;
+    margin: 20px 0;
     height: 34px;
-    width: 125px;
+    padding: 5px 20px;
     font-family: 'Lato', sans-serif;
     letter-spacing: 0.5px;
     background: #33334d;
@@ -177,7 +187,18 @@
     transition: 0.2s all;
   }
 
-  input[type="submit"]:hover {
+  #drag {
+    background: #33334d;
+    opacity: 0.9;
+    border: 0px solid;
+    color: #fff;
+    font-size: 13px;
+    transition: 0.2s all;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  input[type="submit"]:hover, #drag:hover {
     opacity: 1;
     cursor: pointer;
   }
@@ -198,4 +219,26 @@
     outline: none;
   }
 
+  .button:disabled {
+    opacity: 0.5;
+  }
+
+  .button:disabled:hover {
+    opacity: 0.5;
+  }
+
+  @media screen and (max-width : 650px) {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+
+      #buttons>input {
+        text-align: center;
+        margin: 0 auto 0 40 0;
+      }
+
+      #drag {
+        margin-bottom: 40px;
+      }
+  }
 }

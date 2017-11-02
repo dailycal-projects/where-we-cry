@@ -4,26 +4,27 @@
 <section class="google-form">
   <div class="wrapper">
     <div id="completed">
-      Thank you for your response.
+      Thank you for your response. It will be reviewed and added to the map.
     </div>
     <form>
     <form action="https://docs.google.com/forms/d/e/1FAIpQLSdhD23SGZpSDAWctvP3z-2MtW7SDUBAwJXNoVo7IlmVNytBSg/formResponse" target="hiddenFrame">
       <!-- Hidden frame to prevent redirecting. -->
       <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 
-
-      <!-- SINGLE LINE TEXT FIELD -->
-      <label for="comfort">Where did you last cry?</label>
-      <input type="button" id="drag" value="Place on map"> <span id="describe">or describe it below.</span>
-      <p class="caption">If off campus, please describe the closest street intersection, and if on campus, describe the building/location within the building.</p>
-      <input id="location" type="text" jsname="YPqjbf" autocomplete="off" tabindex="0" name="entry.2117530617" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="">
+      <h2>Tell us about a time you cried in Berkeley.</h2>
 
       <!-- MULTI-LINE TEXT FIELD -->
-      <label for="explain">Why were you crying?</label>
+      <p class="caption">Responses may be edited for clarity and length.</p>
       <textarea jsname="YPqjbf" jscontroller="gZjhIf" jsaction="input:Lg5SV;ti6hGc:XMgOHc;rcuQ6b:WYd;" required="" name="entry.643682983" dir="auto" data-initial-dir="auto"></textarea>
 
-      <!-- SUBMIT BUTTON -->
-      <input class="button" id="submit" type="submit" value="Submit">
+      <!-- SINGLE LINE TEXT FIELD -->
+      <div id="buttons">
+        <input type="button" id="drag" value="Add to map" name="entry.2117530617">
+        <input id="location" type="text" jsname="YPqjbf" autocomplete="off" tabindex="0" name="entry.2117530617" value="" required="" dir="auto" data-initial-dir="auto" data-initial-value="" style="display: none">
+
+        <!-- SUBMIT BUTTON -->
+        <input class="button" id="submit" type="submit" value="Submit" disabled="true">
+      </div>
     </form>
   </div>
 </section>
