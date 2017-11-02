@@ -242,3 +242,16 @@
       }
   }
 }
+
+#map {
+  height:500px;
+  margin: 0 auto;
+  position: relative;
+  width: 60%;
+  display: inline-block;
+
+  @media screen and (max-width: 650px) {
+    display: block;
+    width: 100%;
+  }
+}
