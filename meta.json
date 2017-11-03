@@ -2,24 +2,24 @@
   "id": "1086064066",
   "publishPath": "2017/where-we-cry/",
   "url": "http://projects.dailycal.org/2017/where-we-cry/",
-  "timestamp": "2017-04-13T08:13-0400",
-  "dateline": "04/13/17 08:13 PM EDT",
+  "timestamp": "2017-11-03T08:00-0800",
+  "dateline": "11/03/17 08:00 AM PST",
   "share": {
     "fbook": {
-      "card_title": "where-we-cry",
-      "card_description": "UC Berkeley's independent student-run newspaper"
+      "card_title": "Where We Cry",
+      "card_description": "The Daily Californian is collecting stories about students crying on campus."
     },
     "twitter": {
-      "card_title": "where-we-cry",
-      "share_tweet": "UC Berkeley's independent student-run newspaper"
+      "card_title": "Where We Cry",
+      "share_tweet": "The Daily Californian is collecting stories about students crying on campus."
     },
     "image": {
-      "url": "http://projects.dailycal.org/2017/where-we-cry/images/share.jpg",
-      "alt": "<Text>",
+      "url": "http://stage-projects.dailycal.org/2017/where-we-cry/images/share.jpg",
+      "alt": "Where We Cry",
       "type": "image/jpeg",
-      "width": "600",
-      "height": "300"
+      "width": "1200",
+      "height": "630"
     },
-    "keywords": "Daily Cal, news"
+    "keywords": "Daily Cal, news, mental health, cry, map, interactive"
   }
 }
