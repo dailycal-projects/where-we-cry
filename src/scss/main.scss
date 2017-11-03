@@ -31,7 +31,8 @@
     max-width: calc(30% - 20px);
     vertical-align: top;
     margin-bottom: 40px;
-    height: 500px;
+    height: 550px;
+    padding-top: 2em;
 
   h2 {
     line-height: 1.2em;
@@ -47,8 +48,6 @@
 
   /* SECTION WRAPPER */
   .wrapper {
-    // width: 85%;
-    // margin: 0 auto;
     max-width: 600px;
   }
 
@@ -69,7 +68,7 @@
   /* SECTION */
   section {
     background-color: #ffffff;
-    padding: 20px 0;
+    padding-top: 20px;
   }
 
   /* FORM STYLES */
@@ -227,15 +226,15 @@
     opacity: 0.5;
   }
 
+  @media screen and (max-width : 720px) {
+      padding-top: 0;
+  }
+
   @media screen and (max-width : 650px) {
       display: block;
       max-width: 100%;
       margin: 0 auto;
-
-      #buttons>input {
-        text-align: center;
-        margin: 0 auto 0 40 0;
-      }
+      padding-top: 2em;
 
       #drag {
         margin-bottom: 40px;
@@ -244,8 +243,7 @@
 }
 
 #map {
-  height:575px;
-  margin: 0 auto;
+  height:600px;
   position: relative;
   width: 60%;
   display: inline-block;
