@@ -36,8 +36,9 @@ map_data.events.map(d => {
   let marker = L.marker([d.lat, d.long])
   markers.push(marker);
   marker.bindPopup(d.message).addTo(map);
-      //.openPopup();
 });
+
+markers[7].openPopup();
 
 
 let pinpoint = null; // Null if no point dragged; else, contains icon.
