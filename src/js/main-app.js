@@ -19,10 +19,6 @@ window.$('.icon-twitter').click((e) => {
 var map = L.map('map', { scrollWheelZoom:false })
             .setView([37.871470, -122.260363], 15); //'map' refers to map.html
 
-// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-//     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-// }).addTo(map); // Map style from open street map
-
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
   subdomains: 'abcd',
@@ -40,12 +36,11 @@ map_data.events.map(d => {
 
 markers[7].openPopup();
 
-
 let pinpoint = null; // Null if no point dragged; else, contains icon.
 $("#drag").click(function() {
   if (pinpoint == null) {
     markers.forEach(m => {
-      m.setOpacity(0.5);
+      m.setOpacity(0.3);
     });
 
     // From https://github.com/pointhi/leaflet-color-markers
@@ -89,3 +84,4 @@ $("#submit").click(function() {
     $("#completed").fadeIn();
   }
 })
+
