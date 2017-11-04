@@ -31,7 +31,6 @@
     max-width: calc(30% - 20px);
     vertical-align: top;
     margin-bottom: 40px;
-    height: 550px;
     padding-top: 2em;
 
   h2 {
@@ -236,8 +235,8 @@
       margin: 0 auto;
       padding-top: 1em;
 
-      #drag {
-        margin-bottom: 40px;
+      #drag, #submit {
+        margin: 0px auto 40px auto;
       }
   }
 }

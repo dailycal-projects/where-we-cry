@@ -17,7 +17,12 @@ window.$('.icon-twitter').click((e) => {
 });
 
 var map = L.map('map', { scrollWheelZoom:false })
-            .setView([37.871470, -122.260363], 15); //'map' refers to map.html
+            .setView([37.871470, -122.260363], 15); //'map' refers to map id
+
+if ($(window).width() <= 650) {
+  let m = $("#map").detach();
+  $("#drag").after(m);
+}
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
