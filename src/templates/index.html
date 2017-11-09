@@ -14,7 +14,11 @@
     <p class="subhead">{{ARCHIE.subhead}}</p>
     <div class="info">
         <p>
-            By <span class="byline"><a href="http://www.dailycal.org/author/aprasad/">Avni Prasad</a></span> and <span class="byline"><a href="http://www.dailycal.org/author/ezhong/">Emily Zhong</a></span> <br /> <span class="timestamp"> <time datetime="{{META.timestamp}}">{{ ARCHIE.dateline | upper }}</time></span>
+            By <span class="byline"><a href="http://www.dailycal.org/author/aprasad/">Avni Prasad</a></span> and <span class="byline"><a href="http://www.dailycal.org/author/ezhong/">Emily Zhong</a></span>
+            <br /> <span class="timestamp"> <time datetime="{{META.timestamp}}">{{ ARCHIE.dateline | upper }}</time></span>
+            {% if ARCHIE.updated %}
+            <br /> <span class="timestamp">UPDATED: <time datetime="{{META.timestamp}}">{{ ARCHIE.updated | upper }}</time></span>
+            {% endif %}
         </p>
     </div>
 </header>
