@@ -1,6 +1,7 @@
 require('../scss/main.scss');
 const map_data = require('../data/data.json'); //loading in data.json as a data variable in js
 const L = require('leaflet');
+const MC = require('leaflet.markercluster')
 
 window.$('.icon-facebook').click((e) => {
   e.preventDefault();
@@ -30,42 +31,43 @@ L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x
   maxZoom: 19
 }).addTo(map);
 
+var markers = L.markerClusterGroup({
+    iconCreateFunction: function(cluster) {
+      var markers = cluster.getAllChildMarkers();
+      var html = '<div class="circle">' + markers.length + '</div>';
+      return L.divIcon({ html: html, className: 'mycluster', iconSize: L.point(32, 32) });
+  }
+});
 
-let markers = [];
 // for every line in the spreadsheet, add a point with the lat and long that has the pop message
 map_data.events.map(d => {
   let i = new L.Icon({
       iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-      iconSize: [16.67, 27.3],
-      iconAnchor: [8, 27.3],
-      popupAnchor: [0.67, -22.67],
-      shadowSize: [27.33, 27.33]
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
   });
 
   let marker = L.marker([d.lat, d.long], {icon: i})
-  markers.push(marker);
-  marker.bindPopup(d.message).addTo(map);
+  marker.bindPopup(d.message)
+  markers.addLayer(marker);
 });
 
-markers[7].openPopup();
-
+map.addLayer(markers)
 
 let pinpoint = null; // Null if no point dragged; else, contains icon.
 $("#drag").click(function() {
   if (pinpoint == null) {
-    markers.forEach(m => {
-      m.setOpacity(0.3);
-    });
-
     // From https://github.com/pointhi/leaflet-color-markers
     let coloredIcon = new L.Icon({
       iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-      iconSize: [16.67, 27.3],
-      iconAnchor: [8, 27.3],
-      popupAnchor: [0.67, -22.67],
-      shadowSize: [27.33, 27.33]
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
     });
 
     pinpoint = L.marker(map.getBounds().getCenter(), {draggable: true, icon: coloredIcon, zIndexOffset: 100});
