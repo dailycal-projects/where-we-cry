@@ -22,6 +22,150 @@
 @import 'credits';
 @import 'graphics';
 
+.interview_right {
+  max-width: 600px;
+  height: 100%;
+  overflow: hidden;
+  margin: 40px auto 0px;
+
+  .image {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  img {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header {
+    font-family: Lato;
+    margin-bottom: 10px;
+  }
+
+  .interviewee {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .location {
+    font-size: 21px;
+  }
+
+  .quote {
+    font-family: Georgia;
+    font-style: italic;
+    margin: 1em auto;
+    font-size: 1em;
+  }
+
+  .line {
+    width: 100%;
+    height: 0px;
+    border: 0.5px solid black;
+  }
+
+  @media screen and (max-width : 650px) {
+    .image {
+      width: 400px;
+      height: 300px;
+      margin: 20px auto 0;
+      display: block;
+      float: none;
+    }
+
+    .header {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .quote {
+      text-align: center;
+    }
+  }
+}
+
+.interview_left {
+  max-width: 600px;
+  height: 100%;
+  overflow: hidden;
+  margin: 40px auto 0px;
+
+  .image {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    float: left;
+  }
+
+  img {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header {
+    font-family: Lato;
+    margin-bottom: 10px;
+  }
+
+  .interviewee {
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .location {
+    font-size: 21px;
+  }
+
+  .quote {
+    font-family: Georgia;
+    font-style: italic;
+    margin: 1em auto;
+    font-size: 1em;
+  }
+
+  .line {
+    width: 100%;
+    height: 0px;
+    border: 0.5px solid black;
+  }
+
+  @media screen and (max-width : 650px) {
+    .image {
+      width: 400px;
+      height: 300px;
+      margin: 20px auto 0;
+      display: block;
+      float: none;
+    }
+
+    .header {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .quote {
+      text-align: center;
+    }
+  }
+}
+
 .google-form {
     background: #ffffff;
     font-family: 'Lato', sans-serif;
