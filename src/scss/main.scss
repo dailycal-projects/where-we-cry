@@ -22,7 +22,7 @@
 @import 'credits';
 @import 'graphics';
 
-.interview_right {
+.interview {
   max-width: 600px;
   height: 100%;
   overflow: hidden;
@@ -30,18 +30,20 @@
 
   .image {
     position: relative;
-    width: 270px;
-    height: 180px;
+    /*width: 270px;
+    height: 180px;*/
+    width: 600px;
+    height: 337.5px;
     overflow: hidden;
     float: right;
     margin-left: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     margin-top: 5px;
   }
 
   img {
     position: absolute;
-    height: 100%;
+    width: 100%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -71,75 +73,9 @@
   @media screen and (max-width : 650px) {
     .image {
       width: 100%;
+      height: 0;
       box-sizing: border-box;
-      padding-bottom: 66%;
-      margin: 20px auto 0;
-      display: block;
-      float: none;
-    }
-
-    .header {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .quote {
-      text-align: center;
-    }
-  }
-}
-
-.interview_left {
-  max-width: 600px;
-  height: 100%;
-  overflow: hidden;
-  margin: 40px auto 40px;
-
-  .image {
-    position: relative;
-    width: 270px;
-    height: 180px;
-    overflow: hidden;
-    margin-right: 20px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    float: left;
-  }
-
-  img {
-    position: absolute;
-    height: 100%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .header {
-    font-family: Lato;
-    margin-bottom: 10px;
-  }
-
-  .interviewee {
-    font-weight: 700;
-    font-size: 24px;
-  }
-
-  .location {
-    font-size: 21px;
-  }
-
-  .quote {
-    font-family: Georgia;
-    font-style: italic;
-    margin: 1em auto;
-    font-size: 1em;
-  }
-
-  @media screen and (max-width : 650px) {
-    .image {
-      width: 100%;
-      box-sizing: border-box;
-      padding-bottom: 66%;
+      padding-bottom: 56.25%;
       margin: 20px auto 0;
       display: block;
       float: none;
@@ -159,7 +95,7 @@
 .line {
   max-width: 600px;
   height: 0px;
-  border: 0.5px solid black;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
   margin: 10px auto 40px;
 }
 
